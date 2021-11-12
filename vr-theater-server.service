@@ -1,0 +1,13 @@
+[Unit]
+Description=Elektrotheater Server
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/opt/game-server/game-server.x86_64 -logFile /var/log/vollstock/game-server.log
+Restart=on-failure
+Environment=HOME=/opt/
+
+[Install]
+WantedBy=multi-user.target
